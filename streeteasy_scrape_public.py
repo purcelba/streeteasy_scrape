@@ -42,7 +42,8 @@ def main(**kwargs):
         partial_save: int, default 2
             Program will create a subdirectory for partial saves of the scraped data every 'partial_save'
             pages.  This ensures that the entire dataset is not lost if the program is interrputed.
-            Saving often is recommended as it is reasonably fast.
+            Set to 0 to turn off partial saving.  Saving often is recommended and does not substantially
+            increase run time.
 
     """
 
