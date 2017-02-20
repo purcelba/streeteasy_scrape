@@ -29,7 +29,7 @@ def main(**kwargs):
     """Loop over all rental listings on streeteasy.com. Format into a Pandas DataFrame
        and save them in a csv.  Note that the program will continue running if it encounters
        errors on a page.  The error will be printed and the program will continue to the next
-       listing or page.  Last debugged 2/6/2017.
+       listing or page.  Last checked 2/6/2017.
 
     Keyword arguments:
         max_pages: int, default 3000
@@ -151,7 +151,6 @@ def main(**kwargs):
                     # check the price for this listing. The price string will come "bundled" with the
                     # price arrow and secondary_text, we will first check for those.  If found, we will
                     # strip them to keep only the price.  There is probably a more elegant way to do this.
-                    # grab everything including price arrow, price, and secondary text
                     d['price'] = soup.find(class_="price").get_text(strip=True, separator='\t')
                     # check for a price arrow, if found, strip it
                     price_arrow = soup.find(class_="price").find(class_="price_arrow")
@@ -247,21 +246,17 @@ def main(**kwargs):
                                 if (d[l] is np.nan) or (dist_num < d[l]):
                                     d[l] = dist_num
 
-
                     # append to DataFrame
                     df_temp = df_temp.append(d, ignore_index=True)
-
 
                 except:
                     print "Error on page %d" % (page)
                     print_err()
                     continue
-
         except:
             print "Error on page %d" % (page)
             print_err()
             continue
-
 
     #save final df
     print "DONE.  Saving..."
