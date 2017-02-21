@@ -6,7 +6,9 @@ Example Python code for scraping real-estate data from a popular rental listings
 This repository contains a Python script for scraping and formatting real estate data
 from the popular NYC rental listings web page www.streeteasy.com. 
 
-By default, it will loop over all listings on the website and collect the following variables:
+By default, it will loop over all listings on the website producing ~27,000 listings on any given day. The results are saved in .csv format.  An example dataset, 2016-12-20.csv, is included. 
+
+The following variables are formatted and saved in the csv file:
 - data_id: a unique integer identifying each listing
 - scrape_date: the date on which the data were collected
 - link: the listing url
@@ -26,7 +28,6 @@ By default, it will loop over all listings on the website and collect the follow
 - transportation: The following columns will return the distance (in miles) to the following subway lines and trains.  Distances under  50 ft are reported as 50ft.  Blanks (NaNs) indicate that this train is approximately >1.8 mi away.
 -- Line A, Line C, Line E, Line B, Line D, Line F, Line M, Line G, Line L, Line J, Line Z, Line N, Line Q, Line R, Line 1, Line 2, Line 3, Line 4, Line 5, Line 6, Line 7, Line S, LIRR, PATH
 
-Results are saved in .csv format.  An example dataset, 2016-12-20.csv, is included. 
 
 ## Important
 
