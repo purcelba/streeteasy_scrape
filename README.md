@@ -8,6 +8,8 @@ from the popular NYC rental listings web page www.streeteasy.com.
 
 By default, it will loop over all listings on the website producing ~27,000 listings on any given day. The results are saved in .csv format.  An example dataset, 2016-12-20.csv, is included. 
 
+If desired, the csv2sql.py will perform additional formatting and add the resulting table to a SQLite local database.
+
 The following variables are formatted and saved in the csv file:
 - data_id: a unique integer identifying each listing
 - scrape_date: the date on which the data were collected
