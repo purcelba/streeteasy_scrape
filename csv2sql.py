@@ -4,8 +4,6 @@ Clean the data.
 Format the data for the SQLite table.
 Upload to the rentnyc_db database.
 """
-
-
 import pandas as pd
 import sqlite3
 import numpy as np
@@ -26,7 +24,7 @@ def main(db_name, data_directory, csv_file, borough_file):
         - Prices that are listed with "Last listed as ..." are converted to actual prices.
         - Realtors listed as "View original listing" is changed to a missing value.
         - Duplicated data_ids are removed.
-        - Some outliers are dropped (>15 rooms and price <20000, listings with >30 beds).
+        - Some outliers are dropped (>12 rooms and price <20000, listings with >8 beds).
         
     Parameters
     ----------
@@ -41,7 +39,6 @@ def main(db_name, data_directory, csv_file, borough_file):
         - name and path of the csv file containing the borough associated with each neighborhood.
         
     """
-
 
     #import as dataframe
     print "Reading csv from %s" % (data_directory + csv_file)
@@ -110,12 +107,12 @@ def main(db_name, data_directory, csv_file, borough_file):
     #note that if we are looking at longitudinal plots, we want to include a second column for scrape_date
     df = df.drop_duplicates(['data_id'])
 
-    #Eliminate the data point with > 15 rooms with the price <20000.
+    #Eliminate the data point with > 12 rooms with the price <20000.
     #In pandas, we delete rows by specifying rows to keep
-    df = df.loc[~((df['rooms'] > 15) & (df['price'] < 20000))]
+    df = df.loc[~((df['rooms'] > 12) & (df['price'] < 20000))]
 
-    #drop listings with >=30 beds
-    df = df.loc[df['beds'] < 30]
+    #drop listings with >=8 beds
+    df = df.loc[df['beds'] < 8]
 
     #change realtor "View original listing" to a missing value
     df.loc[df['realtor'] == "View original listing",'realtor'] = -1

@@ -1,9 +1,9 @@
 # streeteasy_scrape
 
-Example Python code for scraping real-estate data from a popular rental listings web page.
+Python code for scraping real-estate data from a popular rental listings web page.
 
 ## About
-This repository contains a Python script for scraping and formatting real estate data
+This repository contains a Python script for scraping and formatting rental listings
 from the popular NYC rental listings web page www.streeteasy.com. 
 
 The core function is streeteasy_scrape_public.py.  By default, it will loop over all listings on the website producing ~27,000 listings on any given day. The results are saved in .csv format.  An example dataset, 2016-12-20.csv, is included. 
@@ -33,4 +33,4 @@ The following variables are formatted and saved in the csv file:
 
 ## Important
 
-As of 2/20/2017, Streeteasy.com has blocked web scraping (see https://www.distilnetworks.com/).
+As of 2/20/2017, Streeteasy.com has blocked web scraping (https://www.distilnetworks.com/).

@@ -71,3 +71,4 @@ if __name__ == '__main__':
     table_name = 'all_data'
     #run function
     main(db_name, table_list, table_name)
+    
