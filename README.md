@@ -36,6 +36,6 @@ The following variables are formatted and saved in the csv file:
 ## Example data
 
 <p align="center">
-<img src="data_screen_shot.png" width=50% /><br>
+<img src="data_screen_shot.png" width=80% /><br>
 </p>
 
