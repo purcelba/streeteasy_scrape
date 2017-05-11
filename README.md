@@ -2,6 +2,9 @@
 
 Python code for scraping real-estate data from a popular rental listings web page.
 
+## Important
+As of 2/20/2017, Streeteasy.com has blocked web scraping (https://www.distilnetworks.com/).
+
 ## About
 This repository contains a Python script for scraping and formatting rental listings
 from the popular NYC rental listings web page www.streeteasy.com. 
@@ -30,7 +33,9 @@ The following variables are formatted and saved in the csv file:
 - transportation: The following columns will return the distance (in miles) to the following subway lines and trains.  Distances under  50 ft are reported as 50ft.  Blanks (NaNs) indicate that this train is approximately >1.8 mi away.
     - Line A, Line C, Line E, Line B, Line D, Line F, Line M, Line G, Line L, Line J, Line Z, Line N, Line Q, Line R, Line 1, Line 2, Line 3, Line 4, Line 5, Line 6, Line 7, Line S, LIRR, PATH
 
+## Example data
 
-## Important
+<p align="center">
+<img src="data_screen_shot.png" width=50% /><br>
+</p>
 
-As of 2/20/2017, Streeteasy.com has blocked web scraping (https://www.distilnetworks.com/).
