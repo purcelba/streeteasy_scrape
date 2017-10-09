@@ -5,17 +5,18 @@ Python code for scraping real-estate data from a popular rental listings web pag
 ## Important
 As of 2/20/2017, Streeteasy.com has blocked web scraping (https://www.distilnetworks.com/).  Consider https://rentlogic.com/ as a potential alternative data source.
 
+
 ## About
 This repository contains a Python script for scraping and formatting rental listings
 from the popular NYC rental listings web page www.streeteasy.com. 
 
 The core function is streeteasy_scrape_public.py.  By default, it will loop over all listings on the website producing ~27,000 listings on any given day. The results are saved in .csv format.  An example dataset, 2016-12-20.csv, is included. 
 
-If desired, two functions are included to format the data into a SQLite local database.  The function csv2sql.py will perform additional formatting and add the resulting table to a SQLite local database.  The function mergeSQL.py will merge tables collected on different days within the SQLite database into a single table after removing duplicates.
+## Data
 
 The following variables are formatted and saved in the csv file:
-- data_id: a unique integer identifying each listing
-- scrape_date: the date on which the data were collected
+- **data_id:** a unique integer identifying each listing
+- **scrape_date:** the date on which the data were collected
 - link: the listing url
 - address: the street address of the listing 
 - price: monthly rental price (USD)
@@ -41,3 +42,5 @@ Small preview of one session of scraped and formatted data in .csv format.  Amen
 <img src="data_screen_shot.png" width=100% /><br>
 </p>
 
+
+If desired, two functions are included to format the data into a SQLite local database.  The function csv2sql.py will perform additional formatting and add the resulting table to a SQLite local database.  The function mergeSQL.py will merge tables collected on different days within the SQLite database into a single table after removing duplicates.
