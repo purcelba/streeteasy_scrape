@@ -47,7 +47,7 @@ The Data directory contains an example .csv file, 2016-12-20.csv, which is the r
 
 Two functions are included to transfer and format the data into a SQLite local database.  
 **csv2sql.py** performs additional formatting for ease of use and adds the resulting table to a SQLite local database.  
-**mergeSQL.py** merges tables collected on different days within the SQLite database into a single table after removing duplicates.
+**mergeSQL.py** merges tables collected on different days within the SQLite database into a single table after removing duplicates.  An additional column indicating the *borough* is added.
 
 ## Formatted Multiple-Day Data Set
 
