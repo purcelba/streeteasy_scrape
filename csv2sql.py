@@ -15,7 +15,7 @@ def main(db_name, data_directory, csv_file, borough_file):
     
     The following operations are performed:
         - The "per_sq_ft" column is eliminated.  It is a linear combination of price and sq_ft.
-        - Missing values are encoded as -1
+        - Missing values are encoded as -1.
         - The "data_id" column will be set as the primary key.
         - Blank rows of the 'beds' column will be converted to 0 to imply a studio apartment.
         - Missing transportation values (subway lines/trains) are changed to 0 to imply absence.
