@@ -55,7 +55,7 @@ def main(**kwargs):
     # set up prefix for links
     prefix = "http://streeteasy.com"
 
-    # initialize a database
+    # initialize a DataFrame
         #features
     basic = ["data_id", "scrape_date", "link", "address", "price", "sq_ft", "per_sq_ft",
              "rooms", "beds", "baths", "unit_type","neighborhood", "days_on_streeteasy", "realtor"]
