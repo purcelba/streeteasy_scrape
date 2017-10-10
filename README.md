@@ -3,7 +3,7 @@
 Python code for scraping real-estate data from a popular rental listings web page.
 
 ## Important
-As of 2/20/2017, Streeteasy.com has blocked web scraping (https://www.distilnetworks.com/).  I'm keeping this repository here to archive the [existing database](https://github.com/purcelba/streeteasy_scrape) and code from which it was generated. Consider https://rentlogic.com/ as a potential alternative data source.
+As of 2/20/2017, Streeteasy.com has blocked web scraping (https://www.distilnetworks.com/).  I'm keeping this repository here to archive the [existing database](https://github.com/purcelba/streeteasy_scrape) and code from which it was generated. Consider https://rentlogic.com/ as a potential alternative source for rental listing data.
 
 
 ## About
