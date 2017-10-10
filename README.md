@@ -51,7 +51,7 @@ Two functions are included to transfer and format the data into a SQLite local d
 
 ### Formatted Multiple-Day Data Set
 
-The data directory contains a formatted SQLite database, streeteasy_db.  The data were scraped between 11/02/2016 and 1/31/2017 (~63,000 unique listings), added to the database using csv2sql.py, and formatted using mergeSQL.py.  The last ten days of data are combined into a table, *test_data*, and the remainder are in a separate table, *train_data*, to facilitate modeling and validation.  Code for analzying and modeling rental prices in this database can be found in the [streeteasy_model](https://github.com/purcelba/streeteasy_model) repository.  This is the back-end database for the  [RentNYC](http://www.bradenpurcell.net/rentapp/) web-application.
+The Data directory contains a formatted SQLite database, *streeteasy_db*.  The data were scraped between 11/02/2016 and 1/31/2017 (~63,000 unique listings), added to the database using csv2sql.py, and formatted using mergeSQL.py.  The last ten days of data are combined into a table, *test_data*, and the remainder are in a separate table, *train_data*, to facilitate modeling and validation.  Code for analzying and modeling rental prices in this database can be found in the [streeteasy_model](https://github.com/purcelba/streeteasy_model) repository.  This is the back-end database for the  [RentNYC](http://www.bradenpurcell.net/rentapp/) web-application.
 
 
 
