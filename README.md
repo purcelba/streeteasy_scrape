@@ -10,7 +10,7 @@ As of 2/20/2017, Streeteasy.com has blocked web scraping (https://www.distilnetw
 This repository contains a Python script for scraping and formatting rental listings
 from the popular NYC rental listings web page www.streeteasy.com. 
 
-The core function is streeteasy_scrape_public.py.  By default, it will loop over all listings on the website producing ~27,000 listings on any given day. The results are saved in .csv format.  An example dataset, 2016-12-20.csv, is included in the Data directory. 
+The core function is streeteasy_scrape_public.py.  By default, it will loop over all listings on the website producing ~27,000 listings on any given day. The results are saved in .csv format.  An example data set, 2016-12-20.csv, is included in the Data directory. 
 
 ## Data
 
