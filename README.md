@@ -3,14 +3,14 @@
 Python code for scraping real-estate data from a popular rental listings web page.
 
 ## Important
-As of 2/20/2017, Streeteasy.com has blocked web scraping (https://www.distilnetworks.com/).  Consider https://rentlogic.com/ as a potential alternative data source.
+As of 2/20/2017, Streeteasy.com has blocked web scraping (https://www.distilnetworks.com/).  I'm keeping this repository here to archive the [existing database](https://github.com/purcelba/streeteasy_scrape) and code from which it was generated. Consider https://rentlogic.com/ as a potential alternative data source.
 
 
 ## About
 This repository contains a Python script for scraping and formatting rental listings
 from the popular NYC rental listings web page www.streeteasy.com. 
 
-The core function is streeteasy_scrape_public.py.  By default, it will loop over all listings on the website producing ~27,000 listings on any given day. The results are saved in .csv format.  An example dataset, 2016-12-20.csv, is included. 
+The core function is streeteasy_scrape_public.py.  By default, it will loop over all listings on the website producing ~27,000 listings on any given day. The results are saved in .csv format.  An example dataset, 2016-12-20.csv, is included in the Data directory. 
 
 ## Data
 
@@ -34,20 +34,24 @@ The following variables are formatted and saved in a csv file:
 - **transportation:** The following columns will return the distance (in miles) to the following subway lines and trains.  Distances under  50 ft are reported as 50ft.  Blanks (NaNs) indicate that this train is approximately >1.8 mi away.
     - Line A, Line C, Line E, Line B, Line D, Line F, Line M, Line G, Line L, Line J, Line Z, Line N, Line Q, Line R, Line 1, Line 2, Line 3, Line 4, Line 5, Line 6, Line 7, Line S, LIRR, PATH
 
-### Example output
+### Example Single-Day Data Set
 
-Small preview of one session of scraped and formatted data in .csv format.  Amenities and transportation variables are not shown.  Download the 2016-12-20.csv example data file to see the full output.
+The Data directory contains an example .csv file, 2016-12-20.csv, which is the result of a single complete scrape of all listings on StreetEasy.com on a single day.  The figure below shows a screenshot of the data.  Download the .csv file for the complete output.
 
 <p align="center">
 <img src="data_screen_shot.png" width=100% /><br>
 </p>
 
-## Additional formatting
+
+## Additional Formatting
 
 Two functions are included to transfer and format the data into a SQLite local database.  
-**csv2sql.py** will performs additional formatting and adds the resulting table to a SQLite local database.  
-**mergeSQL.py** will merge tables collected on different days within the SQLite database into a single table after removing duplicates.
+**csv2sql.py** performs additional formatting for ease of use and adds the resulting table to a SQLite local database.  
+**mergeSQL.py** merges tables collected on different days within the SQLite database into a single table after removing duplicates.
 
+### Formatted Multiple-Day Data Set
+
+The data directory contains a formatted SQLite database, streeteasy_db.  The data were scraped between 11/02/2016 and 1/31/2017 (~63,000 unique listings), added to the database using csv2sql.py, and formatted using mergeSQL.py.  The last ten days of data are combined into a table, *test_data*, and the remainder are in a separate table, *train_data*, to facilitate modeling and validation.  Code for analzying and modeling rental prices in this database can be found in the [streeteasy_model](https://github.com/purcelba/streeteasy_model) repository.  This is the back-end database for the  [RentNYC](http://www.bradenpurcell.net/rentapp/) web-application.
 
 
 
